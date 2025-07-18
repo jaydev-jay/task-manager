@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate,useNavigate } from "react-router-dom";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
@@ -11,6 +11,7 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
+  const navigate = useNavigate()
 
   const fetchTodos = async () => {
     const token = localStorage.getItem("token");
@@ -20,11 +21,12 @@ export default function App() {
     }
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/`, {
+      const res = await fetch(`${API_BASE_URL}/api/todolist`, { //changes
         headers: { auth: token },
       });
       const data = await res.json();
       if (data.status === 200) {
+                                           
         setTodos(data.data.todos || []);
         setUser(data.data.name || "User");
         setAuthenticated(true);
