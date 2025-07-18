@@ -3,7 +3,7 @@ import { useState } from "react";
 const API_URL = "https://task-manager-api-kohl-three.vercel.app";
 
 
-export default function RegisterForm({ onRegistered }) {
+export default function RegisterForm() {
   const [form, setForm] = useState({
     name: "",
     username: "",
@@ -33,7 +33,7 @@ export default function RegisterForm({ onRegistered }) {
       console.log("REGISTER RESPONSE:", data);
 
       if (res.ok) {
-        onRegistered(); // call the callback to switch page or show success
+       
       } else {
         setError(data.message || "Registration failed");
       }
