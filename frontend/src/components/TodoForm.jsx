@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_BASE_URL = "https://task-manager-api-kohl-three.vercel.app/api";
+const API_BASE_URL = "https://task-manager-api-kohl-three.vercel.app";
 
 export default function TodoForm({ onTodoCreated }) {
   const [desc, setDesc] = useState("");
@@ -17,7 +17,7 @@ export default function TodoForm({ onTodoCreated }) {
     }
 
     try {
-      const res = await fetch(`${API_BASE_URL}/createtodo`, {
+      const res = await fetch(`${API_BASE_URL}/api/createtodo`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
