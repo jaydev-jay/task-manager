@@ -103,7 +103,7 @@ export default function App() {
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(`${API_BASE_URL}/api/removetodo`, {
-        method: "DELETE",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           auth: token,
