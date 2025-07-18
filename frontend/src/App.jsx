@@ -77,7 +77,7 @@ export default function App() {
   async function toggleComplete(id) {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`${API_BASE_URL}/marktodo`, {
+      const res = await fetch(`${API_BASE_URL}/api/marktodo`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -99,7 +99,7 @@ export default function App() {
   async function handleDelete(id) {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`${API_BASE_URL}/deletetodo`, {
+      const res = await fetch(`${API_BASE_URL}/api/deletetodo`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
