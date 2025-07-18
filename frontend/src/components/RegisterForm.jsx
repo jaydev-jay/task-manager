@@ -98,7 +98,7 @@ export default function RegisterForm({ onRegistered }) {
           Already registered?{" "}
             <span
               className="text-blue-600 hover:underline cursor-pointer"
-               onClick={() => navigate("/login")}
+               onClick={() => navigate("/")}
             >
               Login here
             </span>
