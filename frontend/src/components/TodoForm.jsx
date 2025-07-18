@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_BASE_URL = "https://task-manager-api-kohl-three.vercel.app";
+const API_BASE_URL = "https://task-manager-api-kohl-three.vercel.app/api";
 
 export default function TodoForm({ onTodoCreated }) {
   const [desc, setDesc] = useState("");
