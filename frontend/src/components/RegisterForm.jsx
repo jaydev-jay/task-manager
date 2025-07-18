@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_URL = "https://task-manager-api-kohl-three.vercel.app/api";
+const API_URL = "https://task-manager-api-kohl-three.vercel.app";
 
 
 export default function RegisterForm({ onRegistered }) {
@@ -23,7 +23,7 @@ export default function RegisterForm({ onRegistered }) {
     console.log("Submitting form:", form);
 
     try {
-      const res = await fetch(`${API_URL}/register`, {
+      const res = await fetch(`${API_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

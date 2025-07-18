@@ -1,5 +1,5 @@
 import { useState } from "react";
-const API_URL = "https://task-manager-api-kohl-three.vercel.app/api";
+const API_URL = "https://task-manager-api-kohl-three.vercel.app";
 
 
 export default function LoginForm({ onLogin }) {
@@ -14,7 +14,7 @@ export default function LoginForm({ onLogin }) {
     e.preventDefault();
     setError(null);
 
-    const res = await fetch(`${API_URL}/login`,  {
+    const res = await fetch(`${API_URL}/api/login`,  {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
