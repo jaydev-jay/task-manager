@@ -103,7 +103,7 @@ export default function App() {
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(`${API_BASE_URL}/api/removetodo`, {
-        method: "POST",
+        method: "POST" ,
         headers: {
           "Content-Type": "application/json",
           auth: token,
@@ -113,7 +113,9 @@ export default function App() {
       const data = await res.json();
       if (data.status === 200) {
         setTodos((prev) => prev.filter((todo) => todo._id !== id));
-      }
+      }else {
+      setError(data.message || "Failed to delete todo");
+    }
     } catch {
       setError("Error deleting todo.");
     }
