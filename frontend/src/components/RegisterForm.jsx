@@ -92,6 +92,16 @@ export default function RegisterForm({ onRegistered }) {
       >
         Register
       </button>
+      <p className="mt-4 text-sm text-center">
+          Already registered?{" "}
+            <span
+              className="text-blue-600 hover:underline cursor-pointer"
+              onClick={() => onRegistered("login")}
+            >
+              Login here
+            </span>
+      </p>
+
     </form>
   );
 }
