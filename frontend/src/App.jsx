@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
-const API_BASE_URL = "https://task-manager-api-kohl-three.vercel.app";
+const API_BASE_URL = "https://task-manager-api-kohl-three.vercel.app/api";
 
 export default function App() {
   const [todos, setTodos] = useState([]);
