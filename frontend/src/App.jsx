@@ -47,6 +47,7 @@ export default function App() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    navigate('/')
     window.location.reload();
   };
 
