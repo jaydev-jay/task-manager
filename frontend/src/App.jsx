@@ -102,8 +102,7 @@ export default function App() {
   async function handleDelete(id) {
     console.log("🧹 Deleting todo with ID:", id)
     const token = localStorage.getItem("token");
-    if(id){
-
+    if (!id) return console.log("❌ No ID provided for deletion");
       try {
         const res = await fetch(`${API_BASE_URL}/api/removetodo`, {
           method: "POST" ,
@@ -122,8 +121,6 @@ export default function App() {
       } catch {
         setError("Error deleting todo.");
       }
-    }else{
-      console.log('id not working')
-    }
+    
   }
 }
