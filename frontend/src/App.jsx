@@ -20,7 +20,7 @@ export default function App() {
     }
 
     try {
-      const res = await fetch(`${API_BASE_URL}/todolist`, {
+      const res = await fetch(`${API_BASE_URL}/api/todolist`, {
         headers: { auth: token },
       });
       const data = await res.json();

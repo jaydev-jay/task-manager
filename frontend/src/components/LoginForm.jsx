@@ -7,7 +7,7 @@ export default function LoginForm({ onLogin }) {
   const [form, setForm] = useState({ username: "", password: "" });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  
+
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -25,6 +25,7 @@ export default function LoginForm({ onLogin }) {
 
     if (data.status === 200 && data.data?.token) {
       localStorage.setItem("token", data.data.token);
+       navigate("/")
       onLogin();
     } else {
       setError(data.message || "Login failed");
