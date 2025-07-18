@@ -34,6 +34,7 @@ export default function RegisterForm({ onRegistered }) {
       console.log("REGISTER RESPONSE:", data);
 
       if (res.ok) {
+        navigate("/")
         onRegistered(); // call the callback to switch page or show success
       } else {
         setError(data.message || "Registration failed");

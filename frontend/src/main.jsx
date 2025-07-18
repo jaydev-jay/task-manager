@@ -11,8 +11,8 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/login" element={<Login onLogin={() => console.log("Registration success")}  />} />
+        <Route path="/app" element={<App />} />
+        <Route path="/" element={<Login onLogin={() => console.log("Login success")}  />} />
         <Route path="/register" element={<Register onRegistered={() => console.log("Registration success")} />} />
       </Routes>
     </BrowserRouter>
