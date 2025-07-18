@@ -100,6 +100,7 @@ export default function App() {
   }
 
   async function handleDelete(id) {
+    console.log("🧹 Deleting todo with ID:", id)
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(`${API_BASE_URL}/api/removetodo`, {
