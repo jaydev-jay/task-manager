@@ -2,7 +2,7 @@ import { useState } from "react";
 const API_URL = "https://task-manager-api-kohl-three.vercel.app";
 
 
-export default function LoginForm() {
+export default function LoginForm({ onLogin }) {
   const [form, setForm] = useState({ username: "", password: "" });
   const [error, setError] = useState(null);
 
@@ -23,7 +23,7 @@ export default function LoginForm() {
 
     if (data.status === 200 && data.data?.token) {
       localStorage.setItem("token", data.data.token);
-      
+      onLogin();
     } else {
       setError(data.message || "Login failed");
     }
