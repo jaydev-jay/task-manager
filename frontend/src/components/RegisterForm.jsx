@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_URL = "https://mern-app-v0-fhd9kd09v-lumens-projects-bcf186c2.vercel.app/api";
+const API_URL = "https://task-manager-api-kohl-three.vercel.app";
 console.log("API TEST →", API_URL || "❌ ENV NOT FOUND");
 
 export default function RegisterForm({ onRegistered }) {
