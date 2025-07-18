@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL ="https://task-manager-api-kohl-three.vercel.app";
 
 export async function fetchWithAuth(path, method = 'GET', token, body = null) {
   const headers = {
