@@ -32,7 +32,7 @@ export default function RegisterForm({ onRegistered }) {
       const data = await res.json();
       console.log("REGISTER RESPONSE:", data);
 
-      if (data.status === 200) {
+      if (res.ok) {
         onRegistered(); // call the callback to switch page or show success
       } else {
         setError(data.message || "Registration failed");
