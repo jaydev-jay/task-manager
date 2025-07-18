@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
-const API_BASE_URL = "https://mern-app-v0-fhd9kd09v-lumens-projects-bcf186c2.vercel.app/api";
+const API_BASE_URL = "https://task-manager-api-kohl-three.vercel.app";
 
 export default function App() {
   const [todos, setTodos] = useState([]);
