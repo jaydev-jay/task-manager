@@ -58,6 +58,15 @@ export default function LoginForm({ onLogin }) {
       >
         Login
       </button>
+      <p className="mt-4 text-sm text-center">
+          Don’t have an account?{" "}
+          <span
+            className="text-blue-600 hover:underline cursor-pointer"
+            onClick={() => onSwitch("register")}
+          >
+            Register here
+          </span>
+      </p>
     </form>
   );
 }
