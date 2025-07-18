@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const API_URL = "https://task-manager-api-kohl-three.vercel.app";
 
 
 export default function LoginForm({ onLogin }) {
   const [form, setForm] = useState({ username: "", password: "" });
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
+  
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -62,7 +64,8 @@ export default function LoginForm({ onLogin }) {
           Don’t have an account?{" "}
           <span
             className="text-blue-600 hover:underline cursor-pointer"
-            onClick={() => onSwitch("register")}
+             onClick={() => navigate("/register")}
+         
           >
             Register here
           </span>
