@@ -102,23 +102,28 @@ export default function App() {
   async function handleDelete(id) {
     console.log("🧹 Deleting todo with ID:", id)
     const token = localStorage.getItem("token");
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/removetodo`, {
-        method: "POST" ,
-        headers: {
-          "Content-Type": "application/json",
-          auth: token,
-        },
-        body: JSON.stringify({ todo_id: id }),
-      });
-      const data = await res.json();
-      if (data.status === 200) {
-        setTodos((prev) => prev.filter((todo) => todo._id !== id));
-      }else {
-      setError(data.message || "Failed to delete todo");
-    }
-    } catch {
-      setError("Error deleting todo.");
+    if(id){
+
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/removetodo`, {
+          method: "POST" ,
+          headers: {
+            "Content-Type": "application/json",
+            auth: token,
+          },
+          body: JSON.stringify({ todo_id: id }),
+        });
+        const data = await res.json();
+        if (data.status === 200) {
+          setTodos((prev) => prev.filter((todo) => todo._id !== id));
+        }else {
+          setError(data.message || "Failed to delete todo");
+        }
+      } catch {
+        setError("Error deleting todo.");
+      }
+    }else{
+      console.log('id not working')
     }
   }
 }
